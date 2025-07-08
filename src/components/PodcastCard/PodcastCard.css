@@ -1,0 +1,182 @@
+.podcast-card {
+  flex: 0 0 auto;
+  width: 280px;
+  background: var(--gray-900);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+}
+
+.podcast-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Thumbnail Section */
+.podcast-thumbnail-wrapper {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background: var(--gray-800);
+}
+
+.podcast-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.podcast-card:hover .podcast-thumbnail {
+  transform: scale(1.1);
+}
+
+/* Progress Bar */
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 5;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary-red);
+  transition: width 0.3s ease;
+}
+
+/* Overlay */
+.podcast-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.podcast-overlay.visible {
+  opacity: 1;
+}
+
+.play-btn {
+  width: 56px;
+  height: 56px;
+  background: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.play-btn:hover {
+  background: var(--secondary-red);
+  transform: scale(1.1);
+}
+
+.play-btn svg {
+  margin-left: 2px;
+}
+
+/* More Button */
+.more-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.podcast-card:hover .more-btn {
+  opacity: 1;
+}
+
+.more-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Info Section */
+.podcast-info {
+  padding: 16px;
+}
+
+.podcast-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.podcast-about {
+  .podcast-about {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+  margin-bottom: 12px;
+  line-height: 1.4;
+  height: 2.8em; /* 2 lines * 1.4em line-height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+}
+
+/* About Button */
+.about-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: transparent;
+  color: var(--primary-red);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid var(--primary-red);
+  border-radius: 16px;
+  transition: var(--transition);
+}
+
+.about-btn:hover {
+  background: var(--primary-red);
+  color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .podcast-card {
+    width: 240px;
+  }
+
+  .podcast-thumbnail-wrapper {
+    height: 140px;
+  }
+
+  .play-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
