@@ -3,7 +3,7 @@ import './Home.css';
 import Navbar from '../Navbar/Navbar';
 import PodcastCard from '../PodcastCard/PodcastCard';
 import { podcastsData } from '../../utils/constants';
-import { ChevronLeft, ChevronRight, Headphones, TrendingUp, Star, Radio, BarChart3, Hash, Clock } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Headphones, TrendingUp, Star, Radio, BarChart3, Laugh, Shield, GraduationCap, Drama, Clock } from 'lucide-react';
 
 const Home = ({ onLogout }) => {
   const scrollRefs = {
@@ -12,7 +12,10 @@ const Home = ({ onLogout }) => {
     popularShows: useRef(null),
     newReleases: useRef(null),
     podcastOfWeek: useRef(null),
-    genres: useRef(null),
+    comedy: useRef(null),
+    crimeThriller: useRef(null),
+    education: useRef(null),
+    drama: useRef(null),
     topCharts: useRef(null)
   };
 
@@ -60,10 +63,28 @@ const Home = ({ onLogout }) => {
       data: podcastsData.podcastOfWeek
     },
     {
-      id: 'genres',
-      title: 'Browse by Genre',
-      icon: Hash,
-      data: podcastsData.genres
+      id: 'comedy',
+      title: 'Comedy',
+      icon: Laugh,
+      data: podcastsData.comedy
+    },
+    {
+      id: 'crimeThriller',
+      title: 'Crime Thriller',
+      icon: Shield,
+      data: podcastsData.crimeThriller
+    },
+    {
+      id: 'education',
+      title: 'Education',
+      icon: GraduationCap,
+      data: podcastsData.education
+    },
+    {
+      id: 'drama',
+      title: 'Drama',
+      icon: Drama,
+      data: podcastsData.drama
     },
     {
       id: 'topCharts',
@@ -99,8 +120,7 @@ const Home = ({ onLogout }) => {
             </div>
             <div className="banner-image">
               <img 
-                src="/assets/images/artists/The Joe Rogan Experience.png
-                " 
+                src="/assets/images/artists/The Joe Rogan Experience.png" 
                 alt="Featured Podcast"
               />
             </div>
@@ -134,10 +154,16 @@ const Home = ({ onLogout }) => {
               >
                 {section.data.map(podcast => (
                   <PodcastCard 
-                    key={podcast.id} 
-                    podcast={podcast} 
-                    showProgress={section.showProgress}
-                  />
+  key={podcast.id} 
+  podcast={podcast} 
+  showProgress={section.showProgress}
+  onView={(selectedPodcast) => {
+    window.scrollTo(0, 0); // optional: scroll to top
+    window.history.pushState({}, '', '/podcast/' + selectedPodcast.id);
+    window.dispatchEvent(new PopStateEvent('popstate', {}));
+  }}
+/>
+
                 ))}
               </div>
 
