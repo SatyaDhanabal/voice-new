@@ -1,15 +1,15 @@
 // Dummy data for artists
 export const artists = [
   { id: 1, name: 'Joe Rogan', image: '/assets/images/artists/Joe Rogan.png' },
-  { id: 2, name: 'Lex Fridman', image: 'https://via.placeholder.com/200x200/1a1a1a/ffffff?text=Lex+Fridman' },
-  { id: 3, name: 'Tim Ferriss', image: 'https://via.placeholder.com/200x200/1a1a1a/ffffff?text=Tim+Ferriss' },
-  { id: 4, name: 'Conan O\'Brien', image: 'https://via.placeholder.com/200x200/1a1a1a/ffffff?text=Conan' },
-  { id: 5, name: 'Marc Maron', image: 'https://via.placeholder.com/200x200/1a1a1a/ffffff?text=Marc+Maron' },
-  { id: 6, name: 'Dax Shepard', image: 'https://via.placeholder.com/200x200/1a1a1a/ffffff?text=Dax+Shepard' },
-  { id: 7, name: 'Emma Chamberlain', image: 'https://via.placeholder.com/200x200/1a1a1a/ffffff?text=Emma' },
+  { id: 2, name: 'Lex Fridman', image: '/assets/images/artists/lex.png' },
+  { id: 3, name: 'Tim Ferriss', image: '/assets/images/artists/ferriss.png' },
+  { id: 4, name: 'Conan O\'Brien', image: '/assets/images/artists/conan o Brien.png' },
+  { id: 5, name: 'Marc Maron', image: '/assets/images/artists/mark.png' },
+  { id: 6, name: 'Dax Shepard', image: '/assets/images/artists/dax.png' },
+  { id: 7, name: 'Emma Chamberlain', image: '/assets/images/artists/emma.png' },
   { id: 8, name: 'Call Her Daddy', image: '/assets/images/artists/call her daddy.png' },
-  { id: 9, name: 'Crime Junkie', image: 'https://via.placeholder.com/200x200/1a1a1a/ffffff?text=Crime+Junkie' },
-  { id: 10, name: 'This American Life', image: 'https://via.placeholder.com/200x200/1a1a1a/ffffff?text=TAL' }
+  { id: 9, name: 'Crime Junkie', image: '/assets/images/artists/crime junkie.png' },
+  { id: 10, name: 'This American Life', image: '/assets/images/artists/americanlife.png' }
 ];
 
 // Dummy data for podcasts
